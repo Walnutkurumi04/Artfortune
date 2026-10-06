@@ -1,0 +1,701 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+Art Fortune — Peinture & Décoration
+{% endblock %}
+
+
+{% block content %}
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section
+    class="hero"
+    id="accueil"
+>
+
+    <div class="hero-content">
+
+        <div class="hero-badge">
+
+            <span class="badge-dot"></span>
+
+            ART FORTUNE
+
+            <span>
+                ✦
+            </span>
+
+        </div>
+
+
+        <h1>
+
+            DONNONS
+            <span class="highlight-violet">
+                VIE
+            </span>
+
+            <br>
+
+            À VOS
+            <span class="highlight-pink">
+                ESPACES.
+            </span>
+
+        </h1>
+
+
+        <p class="hero-description">
+
+            Peinture, décoration, construction et aménagement :
+            Art Fortune transforme vos idées en espaces
+            uniques, élégants et fonctionnels.
+
+        </p>
+
+
+        <div class="hero-buttons">
+
+            <a
+                href="#contact"
+                class="btn btn-primary"
+            >
+
+                <span>
+                    Demander un devis
+                </span>
+
+                <span class="btn-icon">
+                    →
+                </span>
+
+            </a>
+
+
+            <a
+                href="#realisations"
+                class="btn btn-secondary"
+            >
+                Voir nos réalisations
+            </a>
+
+        </div>
+
+
+        <div class="hero-services">
+
+            <span>
+                🎨 Peinture
+            </span>
+
+            <span>
+                🏠 Décoration
+            </span>
+
+            <span>
+                📐 Plans
+            </span>
+
+            <span>
+                ⚡ Électricité
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <!-- VISUEL -->
+
+    <div class="hero-visual">
+
+        <div
+            class="hero-pattern"
+            aria-hidden="true"
+        ></div>
+
+
+        <div class="hero-image-wrapper">
+
+            <img
+                src="{{ url_for('static', filename='images/hero.jpg') }}"
+                alt="Réalisation Art Fortune"
+                class="hero-image"
+            >
+
+        </div>
+
+
+        <div class="floating-sticker sticker-yellow">
+
+            <span>
+                ✦
+            </span>
+
+            <strong>
+                QUALITÉ
+            </strong>
+
+        </div>
+
+
+        <div class="floating-sticker sticker-pink">
+
+            <span>
+                ✓
+            </span>
+
+            <strong>
+                FINITION
+            </strong>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     BANDEAU
+===================================================== -->
+
+<section class="marquee-section">
+
+    <div class="marquee">
+
+        <span>
+            PEINTURE
+        </span>
+
+        <b>✦</b>
+
+        <span>
+            DÉCORATION
+        </span>
+
+        <b>✦</b>
+
+        <span>
+            CONSTRUCTION
+        </span>
+
+        <b>✦</b>
+
+        <span>
+            DESIGN
+        </span>
+
+        <b>✦</b>
+
+        <span>
+            FINITION
+        </span>
+
+        <b>✦</b>
+
+        <span>
+            ART FORTUNE
+        </span>
+
+        <b>✦</b>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     SERVICES
+===================================================== -->
+
+<section
+    class="section"
+    id="services"
+>
+
+    <div class="section-heading">
+
+        <div>
+
+            <span class="section-label">
+                NOS SAVOIR-FAIRE
+            </span>
+
+            <h2>
+                UN SEUL
+                <span>
+                    PARTENAIRE.
+                </span>
+                <br>
+                PLUSIEURS
+                <span>
+                    SOLUTIONS.
+                </span>
+            </h2>
+
+        </div>
+
+
+        <p>
+
+            De la conception aux dernières finitions,
+            Art Fortune vous accompagne dans vos projets
+            de construction, rénovation et décoration.
+
+        </p>
+
+    </div>
+
+
+    <div class="services-grid">
+
+        {% for service in services %}
+
+        <article
+            class="service-card service-{{ service.color }}"
+        >
+
+            <div class="service-icon">
+
+                {{ service.icon }}
+
+            </div>
+
+
+            <div class="service-number">
+
+                {{ "%02d" | format(loop.index) }}
+
+            </div>
+
+
+            <h3>
+                {{ service.title }}
+            </h3>
+
+
+            <p>
+                {{ service.description }}
+            </p>
+
+
+            <div class="service-arrow">
+                →
+            </div>
+
+        </article>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     ABOUT
+===================================================== -->
+
+<section
+    class="about-section"
+    id="apropos"
+>
+
+    <div class="about-pattern"></div>
+
+
+    <div class="about-image">
+
+        <img
+            src="{{ url_for('static', filename='images/hero.jpg') }}"
+            alt="Travail réalisé par Art Fortune"
+        >
+
+        <div class="about-badge">
+
+            <strong>
+                ART
+            </strong>
+
+            <span>
+                +
+            </span>
+
+            <strong>
+                SAVOIR-FAIRE
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <div class="about-content">
+
+        <span class="section-label">
+            À PROPOS D'ART FORTUNE
+        </span>
+
+
+        <h2>
+
+            VOTRE PROJET.
+            <br>
+
+            NOTRE
+            <span>
+                SAVOIR-FAIRE.
+            </span>
+
+        </h2>
+
+
+        <p>
+
+            Art Fortune propose des services dans les domaines
+            de la peinture, de la décoration, de l'aménagement
+            et des travaux techniques du bâtiment.
+
+        </p>
+
+
+        <p>
+
+            Notre objectif est de réunir plusieurs métiers
+            autour d'un même projet afin de faciliter la
+            réalisation de vos travaux et d'obtenir des
+            finitions cohérentes.
+
+        </p>
+
+
+        <div class="about-points">
+
+            <div>
+
+                <span>✓</span>
+
+                <strong>
+                    Travail soigné
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>✓</span>
+
+                <strong>
+                    Solutions adaptées
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>✓</span>
+
+                <strong>
+                    Accompagnement du projet
+                </strong>
+
+            </div>
+
+
+            <div>
+
+                <span>✓</span>
+
+                <strong>
+                    Plusieurs corps de métier
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     REALISATIONS
+===================================================== -->
+
+<section
+    class="section portfolio-section"
+    id="realisations"
+>
+
+    <div class="portfolio-heading">
+
+        <div>
+
+            <span class="section-label">
+                NOS RÉALISATIONS
+            </span>
+
+            <h2>
+                CE QUE NOUS
+                <span>
+                    AVONS CRÉÉ.
+                </span>
+            </h2>
+
+        </div>
+
+
+        <p>
+
+            Retrouvez ici quelques-unes de nos réalisations.
+            Cette galerie pourra être alimentée au fur et
+            à mesure des nouveaux projets.
+
+        </p>
+
+    </div>
+
+
+    <div class="portfolio-grid">
+
+        {% for project in projects %}
+
+        <article class="project-card">
+
+            <div class="project-image">
+
+                <img
+                    src="{{ url_for('static', filename='images/' + project.image) }}"
+                    alt="{{ project.title }}"
+                    loading="lazy"
+                >
+
+                <div class="project-overlay">
+
+                    <span>
+                        Voir le projet
+                    </span>
+
+                    <span>
+                        ↗
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="project-info">
+
+                <span>
+                    {{ project.category }}
+                </span>
+
+                <h3>
+                    {{ project.title }}
+                </h3>
+
+            </div>
+
+        </article>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROCESS
+===================================================== -->
+
+<section class="process-section">
+
+    <div class="section-heading process-heading">
+
+        <div>
+
+            <span class="section-label">
+                NOTRE MÉTHODE
+            </span>
+
+            <h2>
+                DE L'IDÉE À LA
+                <span>
+                    RÉALISATION.
+                </span>
+            </h2>
+
+        </div>
+
+    </div>
+
+
+    <div class="process-grid">
+
+        <div class="process-step">
+
+            <div class="process-number">
+                01
+            </div>
+
+            <h3>
+                ÉCHANGE
+            </h3>
+
+            <p>
+                Nous discutons de votre projet,
+                de vos besoins et de vos attentes.
+            </p>
+
+        </div>
+
+
+        <div class="process-step">
+
+            <div class="process-number">
+                02
+            </div>
+
+            <h3>
+                CONCEPTION
+            </h3>
+
+            <p>
+                Nous préparons les solutions,
+                plans et choix adaptés au projet.
+            </p>
+
+        </div>
+
+
+        <div class="process-step">
+
+            <div class="process-number">
+                03
+            </div>
+
+            <h3>
+                RÉALISATION
+            </h3>
+
+            <p>
+                Nos différents travaux sont réalisés
+                avec attention aux détails et aux finitions.
+            </p>
+
+        </div>
+
+
+        <div class="process-step">
+
+            <div class="process-number">
+                04
+            </div>
+
+            <h3>
+                FINITION
+            </h3>
+
+            <p>
+                Nous vérifions le résultat final
+                pour livrer un espace prêt à être utilisé.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section
+    class="cta-section"
+    id="contact"
+>
+
+    <div class="cta-decoration">
+        ✦
+    </div>
+
+    <div class="cta-decoration cta-decoration-two">
+        ●
+    </div>
+
+
+    <span class="section-label">
+        UN PROJET EN TÊTE ?
+    </span>
+
+
+    <h2>
+
+        PARLONS DE
+        <span>
+            VOTRE PROJET.
+        </span>
+
+    </h2>
+
+
+    <p>
+
+        Maison, appartement, commerce ou bâtiment professionnel :
+        contactez Art Fortune pour discuter de vos besoins.
+
+    </p>
+
+
+    <div class="contact-actions">
+
+        <a
+            href="tel:+243843118613"
+            class="btn btn-primary btn-large"
+        >
+
+            <span>
+                📞 +243 84 311 86 13
+            </span>
+
+            <span class="btn-icon">
+                →
+            </span>
+
+        </a>
+
+
+        <a
+            href="https://wa.me/243843118613"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-whatsapp"
+        >
+
+            💬 WhatsApp
+
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

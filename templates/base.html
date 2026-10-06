@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Art Fortune - Peinture, décoration, staff, plomberie, carrelage, électricité, menuiserie et sécurité."
+    >
+
+    <title>
+        {% block title %}Art Fortune{% endblock %}
+    </title>
+
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- CSS -->
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='css/style.css') }}"
+    >
+
+</head>
+
+
+<body>
+
+    <!-- Décorations -->
+
+    <div
+        class="decoration decoration-circle"
+        aria-hidden="true"
+    ></div>
+
+    <div
+        class="decoration decoration-square"
+        aria-hidden="true"
+    ></div>
+
+    <div
+        class="decoration decoration-triangle"
+        aria-hidden="true"
+    ></div>
+
+
+    <!-- NAVIGATION -->
+
+    <header class="navbar">
+
+        <a
+            href="#accueil"
+            class="logo"
+        >
+
+            <span class="logo-mark">
+                AF
+            </span>
+
+            <span>
+                Art Fortune
+            </span>
+
+        </a>
+
+
+        <nav
+            class="desktop-nav"
+            aria-label="Navigation principale"
+        >
+
+            <a href="#accueil">
+                Accueil
+            </a>
+
+            <a href="#services">
+                Services
+            </a>
+
+            <a href="#realisations">
+                Réalisations
+            </a>
+
+            <a href="#apropos">
+                À propos
+            </a>
+
+            <a
+                href="#contact"
+                class="nav-contact"
+            >
+                Contact
+            </a>
+
+        </nav>
+
+
+        <button
+            class="menu-button"
+            id="menu-button"
+            aria-label="Ouvrir le menu"
+            aria-expanded="false"
+        >
+            ☰
+        </button>
+
+    </header>
+
+
+    <!-- MENU MOBILE -->
+
+    <nav
+        class="mobile-nav"
+        id="mobile-nav"
+        aria-label="Navigation mobile"
+    >
+
+        <a href="#accueil">
+            Accueil
+        </a>
+
+        <a href="#services">
+            Services
+        </a>
+
+        <a href="#realisations">
+            Réalisations
+        </a>
+
+        <a href="#apropos">
+            À propos
+        </a>
+
+        <a href="#contact">
+            Contact
+        </a>
+
+    </nav>
+
+
+    {% block content %}{% endblock %}
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <div class="footer-brand">
+
+            <div class="logo-mark">
+                AF
+            </div>
+
+            <div>
+
+                <strong>
+                    Art Fortune
+                </strong>
+
+                <p>
+                    Créons des espaces qui vous ressemblent.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-contact">
+
+            <span>
+                Besoin d'un devis ?
+            </span>
+
+            <a href="tel:+243843118613">
+                +243 84 311 86 13
+            </a>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 Art Fortune
+            </span>
+
+            <span>
+                Peinture · Construction · Décoration
+            </span>
+
+        </div>
+
+    </footer>
+
+
+    <script
+        src="{{ url_for('static', filename='js/script.js') }}"
+    ></script>
+
+</body>
+
+</html>
